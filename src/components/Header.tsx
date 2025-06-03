@@ -1,13 +1,17 @@
-
 import { Button } from "@/components/ui/button";
-import { Globe, User } from "lucide-react";
+import { Globe, User, LogIn } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export const Header = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
   return (
     <header className="bg-white/80 backdrop-blur-sm border-b border-divine-sky/20 sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 cursor-pointer" onClick={() => navigate("/")}>
           <div className="w-8 h-8 bg-gradient-to-br from-divine-gold to-divine-sky rounded-full flex items-center justify-center">
             <span className="text-white font-bold text-lg">D</span>
           </div>
@@ -31,10 +35,36 @@ export const Header = () => {
             </SelectContent>
           </Select>
           
-          <Button variant="ghost" size="sm" className="text-divine-ocean hover:bg-divine-lavender/20">
-            <User className="w-4 h-4 mr-2" />
-            Profile
-          </Button>
+          {isLoggedIn ? (
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              className="text-divine-ocean hover:bg-divine-lavender/20"
+              onClick={() => navigate("/share")}
+            >
+              <User className="w-4 h-4 mr-2" />
+               Share
+            </Button>
+          ) : (
+            <div className="flex items-center space-x-2">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-divine-ocean hover:bg-divine-lavender/20"
+                onClick={() => navigate("/login")}
+              >
+                <LogIn className="w-4 h-4 mr-2" />
+                Sign In
+              </Button>
+              <Button
+                size="sm"
+                className="bg-gradient-to-r from-divine-ocean to-divine-sky hover:from-divine-sky hover:to-divine-ocean text-white"
+                onClick={() => navigate("/register")}
+              >
+                Register
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     </header>

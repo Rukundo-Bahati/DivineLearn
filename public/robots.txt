@@ -12,3 +12,7 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+The test credentials :
+Email: demo@divinelearn.com
+Password: divine123

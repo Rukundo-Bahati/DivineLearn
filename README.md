@@ -1,8 +1,10 @@
 # 🌟 DivineLearn
 
 **DivineLearn** is an inclusive, gamified educational platform designed to teach bite-sized spiritual and philosophical concepts about God across world religions. Through micro-courses, interactive quizzes, and community contributions, users can explore divine ideas and interfaith insights in a fun and meaningful way.
+<br />
+![divine](https://github.com/user-attachments/assets/a7ac1b29-abe7-401d-8348-324cd47c688e)
 
-<img src="/public/divine.png" / >
+
 <br />
 ---
 

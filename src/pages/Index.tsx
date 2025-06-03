@@ -93,7 +93,6 @@ const Index = () => {
 
   const navigationItems = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard, showWhenLoggedIn: true },
-    { id: 'landing', label: 'Home', icon: Home, showWhenLoggedIn: false },
     { id: 'courses', label: 'Courses', icon: BookOpen, showWhenLoggedIn: true },
     { id: 'quiz', label: 'Quiz', icon: Brain, showWhenLoggedIn: true },
     { id: 'profile', label: 'Profile', icon: User, showWhenLoggedIn: true },
